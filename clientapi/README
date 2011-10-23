@@ -1,0 +1,32 @@
+mldata.org client
+=================
+
+Python client which simplyfies usage of mldata.org resources.
+
+Requirements
+------------
+
+- shogun toolbox
+  http://www.shogun-toolbox.org/
+
+  apt-get install shogun-python shogun-python-modular
+
+- mldata-utils and its dependencies
+  http://mloss.org/software/view/262/
+
+Usage
+-----
+
+    python mlprocess.py task.h5 data.h5 output.txt
+
+Where:
+* task.h5 and data.h5 are mldata's flavor of h5 files format describing
+  task and data ( http://mldata.org/about/hdf5/ )
+* output.txt is path under which the output should be written
+
+Demo
+----
+
+Demo sh script (demo_api.sh) shows simple usage of the client:
+1. download tasks and data from mldata.org
+2. solve machine learning problems using shogun
