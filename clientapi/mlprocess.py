@@ -39,8 +39,11 @@ def parse_task(task_filename):
     task_type = tf['task_descr']['type'].value
     fidx = tf['task']['input_variables'].value
     lidx = tf['task']['output_variables'].value
-    train_idx = tf['task']['train_idx'].value
-    test_idx = tf['task']['test_idx'].value
+
+    idx = tf['task']['data_split'].value[0]
+
+    train_idx = [i for i in xrange(0,len(idx)) if idx[i] == 1]
+    test_idx = [i for i in xrange(0,len(idx)) if idx[i] == 3]
 
     return task_type, fidx, lidx, train_idx, test_idx
 
